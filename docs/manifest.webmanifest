@@ -1,0 +1,11 @@
+{
+  "name": "AI Escape Workshop Kit",
+  "short_name": "AI Escape",
+  "description": "医療教育者向け生成AIワークショップの進行付きオープン教材",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f1e9",
+  "theme_color": "#12233f",
+  "lang": "ja"
+}
+
