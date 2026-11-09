@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#12233f">
+  <meta name="description" content="医療教育者向け生成AIワークショップを、準備から振り返りまで進行できるオープン教材です。">
+  <title>AI Escape Workshop Kit｜医療教育×生成AI</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="トップへ">
+      <span class="brand-mark">AI</span>
+      <span>Escape Workshop Kit</span>
+    </a>
+    <nav aria-label="主要ナビゲーション">
+      <a href="#overview">概要</a>
+      <a href="#missions">4つの課題</a>
+      <a href="#facilitator">進行</a>
+      <a href="#safety">安全</a>
+    </nav>
+    <button class="ghost-button" id="resetProgress" type="button">進捗をリセット</button>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">OPEN EDUCATIONAL RESOURCE · 90 MIN</p>
+        <h1>5日かかる仕事を、<br><span>あと60分で。</span></h1>
+        <p class="hero-lead">文章・対話・画像・動画。4つの生成AI課題をチームで突破しながら、医療教育への応用と限界を体験する進行付き教材です。</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#missions">ワークショップを開始</a>
+          <button class="secondary-button" id="presenterMode" type="button">投影モード</button>
+        </div>
+        <ul class="hero-meta" aria-label="教材の特徴">
+          <li>登録不要で閲覧</li>
+          <li>進捗は端末内だけに保存</li>
+          <li>参加者データを収集しない</li>
+        </ul>
+      </div>
+      <div class="hero-visual" aria-label="4つの課題を示す図">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="core"><span>60</span><small>MIN</small></div>
+        <span class="satellite sat-1">抄録</span>
+        <span class="satellite sat-2">問診</span>
+        <span class="satellite sat-3">画像</span>
+        <span class="satellite sat-4">動画</span>
+      </div>
+    </section>
+
+    <section class="progress-panel" aria-label="現在の進捗">
+      <div>
+        <span class="section-kicker">YOUR PROGRESS</span>
+        <strong id="progressText">0 / 4 missions complete</strong>
+      </div>
+      <div class="progress-track" aria-hidden="true"><span id="progressBar"></span></div>
+    </section>
+
+    <section class="section overview" id="overview">
+      <div class="section-heading">
+        <p class="section-kicker">01 · OVERVIEW</p>
+        <h2>この教材でできること</h2>
+        <p>生成物の出来栄えだけでなく、指示の具体化、検証、個人情報保護までを一つの流れで扱います。</p>
+      </div>
+      <div class="feature-grid">
+        <article><span>01</span><h3>理解する</h3><p>生成AIの得意・不得意、誤情報、バイアスを短く確認します。</p></article>
+        <article><span>02</span><h3>試して比べる</h3><p>異なる出力形式を横断し、教育場面ごとの向き不向きを比較します。</p></article>
+        <article><span>03</span><h3>振り返る</h3><p>成果物とプロセスをチームで言語化し、次の授業設計につなげます。</p></article>
+      </div>
+      <div class="timeline" aria-label="90分の進行例">
+        <div><strong>15分</strong><span>導入・注意点</span></div>
+        <div><strong>60分</strong><span>4つのミッション</span></div>
+        <div><strong>15分</strong><span>共有・振り返り</span></div>
+      </div>
+    </section>
+
+    <section class="section missions" id="missions">
+      <div class="section-heading inverted">
+        <p class="section-kicker">02 · MISSIONS</p>
+        <h2>4つのミッション</h2>
+        <p>各カードを開き、タイマーを開始してください。完了チェックはこの端末内に保存されます。</p>
+      </div>
+      <div class="mission-list">
+        <article class="mission-card" data-mission="1">
+          <button class="mission-summary" type="button" aria-expanded="false">
+            <span class="mission-number">01</span><span><small>TEXT</small><strong>学会抄録を完成させる</strong></span><span class="mission-time">15分</span><span class="chevron">＋</span>
+          </button>
+          <div class="mission-detail" hidden>
+            <div class="mission-grid">
+              <div>
+                <h3>ゴール</h3>
+                <p>合成症例をもとに、構造化された300〜400字の症例報告抄録を作り、出力の妥当性を点検する。</p>
+                <h3>課題用・合成症例</h3>
+                <p>58歳男性。3か月前から労作時息切れが進行。心電図で低電位、心エコーで左室壁肥厚と心尖部温存パターンを認めた。血清・尿免疫固定と組織検査からALアミロイドーシスと診断し治療を開始した。本症例は教材用に作成した架空例である。</p>
+              </div>
+              <div class="toolbox">
+                <h3>スタータープロンプト</h3>
+                <pre id="prompt1">あなたは医学教育に詳しい臨床医です。以下の架空症例を、背景・症例・考察・結論の構成で、300〜400字の学会抄録にしてください。事実を追加せず、不明点は不明と明示してください。最後に、確認が必要な記述を箇条書きにしてください。</pre>
+                <button class="copy-button" data-copy="prompt1" type="button">プロンプトをコピー</button>
+              </div>
+            </div>
+            <div class="check-row"><button class="timer-button" data-minutes="15" type="button">15:00 タイマー</button><label><input class="mission-check" type="checkbox"> 完了した</label></div>
+          </div>
+        </article>
+
+        <article class="mission-card" data-mission="2">
+          <button class="mission-summary" type="button" aria-expanded="false">
+            <span class="mission-number">02</span><span><small>DIALOGUE</small><strong>AI模擬患者に問診する</strong></span><span class="mission-time">15分</span><span class="chevron">＋</span>
+          </button>
+          <div class="mission-detail" hidden>
+            <div class="mission-grid">
+              <div><h3>ゴール</h3><p>発熱を主訴とする架空患者への問診を行い、患者中心の情報収集と安全確認を10分以内で実践する。</p><h3>振り返り</h3><ul><li>患者の感情・期待・解釈・生活への影響を尋ねたか</li><li>重篤疾患の警告症状を確認したか</li><li>AIが示した情報を診断事実として扱っていないか</li></ul></div>
+              <div class="toolbox"><h3>スタータープロンプト</h3><pre id="prompt2">あなたは医療面接練習用の架空患者です。45歳、発熱と咽頭痛で外来を受診しました。質問された範囲だけ患者として自然に答えてください。診断名は言わず、危険な助言もしないでください。「終了」と入力されたら、共感、情報収集、警告症状、安全性の4項目で形成的フィードバックを返してください。</pre><button class="copy-button" data-copy="prompt2" type="button">プロンプトをコピー</button></div>
+            </div>
+            <div class="check-row"><button class="timer-button" data-minutes="15" type="button">15:00 タイマー</button><label><input class="mission-check" type="checkbox"> 完了した</label></div>
+          </div>
+        </article>
+
+        <article class="mission-card" data-mission="3">
+          <button class="mission-summary" type="button" aria-expanded="false">
+            <span class="mission-number">03</span><span><small>IMAGE</small><strong>患者教育ポスターを作る</strong></span><span class="mission-time">15分</span><span class="chevron">＋</span>
+          </button>
+          <div class="mission-detail" hidden>
+            <div class="mission-grid">
+              <div><h3>ゴール</h3><p>夏季の熱中症予防をテーマに、読みやすく、誤解を生みにくい患者教育ポスター案を作る。</p><h3>確認ポイント</h3><ul><li>対象者、行動、場所、雰囲気、表現様式を具体化</li><li>文字化けや医学的誤りを人が確認</li><li>実在人物、患者写真、施設ロゴを入力しない</li></ul></div>
+              <div class="toolbox"><h3>スタータープロンプト</h3><pre id="prompt3">日本の一般成人向け「夏の熱中症予防」ポスター。涼しい室内でエアコンを適切に使用し、こまめに水分をとる場面。清潔で親しみやすいフラットイラスト。青と白を基調に高いコントラスト。医療上の断定表現、企業ロゴ、実在人物は含めない。文字を入れず、後から見出しを配置できる余白を上部に確保する。</pre><button class="copy-button" data-copy="prompt3" type="button">プロンプトをコピー</button></div>
+            </div>
+            <div class="check-row"><button class="timer-button" data-minutes="15" type="button">15:00 タイマー</button><label><input class="mission-check" type="checkbox"> 完了した</label></div>
+          </div>
+        </article>
+
+        <article class="mission-card" data-mission="4">
+          <button class="mission-summary" type="button" aria-expanded="false">
+            <span class="mission-number">04</span><span><small>VIDEO</small><strong>説明シーンを動画にする</strong></span><span class="mission-time">15分</span><span class="chevron">＋</span>
+          </button>
+          <div class="mission-detail" hidden>
+            <div class="mission-grid">
+              <div><h3>ゴール</h3><p>採血を不安がる架空の患児に医療者が優しく説明する、短い教育用動画の絵コンテまたは動画を作る。</p><h3>安全条件</h3><ul><li>実在の患者・職員を素材にしない</li><li>生成物であることを明示する</li><li>臨床手技の正確性を医療者が確認する</li></ul></div>
+              <div class="toolbox"><h3>スタータープロンプト</h3><pre id="prompt4">架空の日本の救急外来。採血を不安がる5歳程度の患児に、看護師が目線を合わせ、ぬいぐるみを使って短く説明する。患児は徐々に安心し、最後にうなずく。温かい自然光、写実的だが実在人物ではない。採血手技そのものや針の接写は映さない。字幕を置ける下部余白を確保。6秒。</pre><button class="copy-button" data-copy="prompt4" type="button">プロンプトをコピー</button></div>
+            </div>
+            <div class="check-row"><button class="timer-button" data-minutes="15" type="button">15:00 タイマー</button><label><input class="mission-check" type="checkbox"> 完了した</label></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section facilitator" id="facilitator">
+      <div class="section-heading"><p class="section-kicker">03 · FACILITATOR</p><h2>進行者ガイド</h2><p>ツール名に依存せず、使用できる生成AIを参加者自身が選べる設計です。</p></div>
+      <div class="facilitator-layout">
+        <ol class="runbook">
+          <li><span>00–05</span><div><strong>目的を共有</strong><p>生成AIの習熟度を競う場ではなく、可能性と限界を比較する場と説明する。</p></div></li>
+          <li><span>05–15</span><div><strong>安全ブリーフィング</strong><p>個人情報、著作権、誤情報、最終判断者について合意する。</p></div></li>
+          <li><span>15–75</span><div><strong>4課題を実施</strong><p>1課題15分。途中で完成度を追求しすぎず、比較と振り返りを優先する。</p></div></li>
+          <li><span>75–90</span><div><strong>共有とデブリーフ</strong><p>「驚いた点」「危険だと感じた点」「教育で試すなら」を各チームから共有する。</p></div></li>
+        </ol>
+        <aside class="prep-card"><h3>準備チェック</h3><label><input type="checkbox"> 安定したネット接続</label><label><input type="checkbox"> 1チーム1台以上の端末</label><label><input type="checkbox"> 利用サービスの規約確認</label><label><input type="checkbox"> 個人情報を使わない合意</label><label><input type="checkbox"> 成果物共有範囲の明示</label><button id="printGuide" class="secondary-button" type="button">ガイドを印刷</button></aside>
+      </div>
+    </section>
+
+    <section class="section safety" id="safety">
+      <div class="section-heading inverted"><p class="section-kicker">04 · SAFETY</p><h2>医療教育で守る4つの原則</h2></div>
+      <div class="safety-grid">
+        <article><span>01</span><h3>入力しない</h3><p>患者・学生・職員を特定できる情報や、未公開研究データを外部AIへ入力しない。</p></article>
+        <article><span>02</span><h3>検証する</h3><p>生成された医学情報、引用、画像、手技を一次資料と専門家の目で確認する。</p></article>
+        <article><span>03</span><h3>明示する</h3><p>AIを使用した範囲と、人が確認・修正した範囲を学習者に伝える。</p></article>
+        <article><span>04</span><h3>同意を分ける</h3><p>授業内共有と一般公開は別の同意。公開範囲・期間・撤回方法を明確にする。</p></article>
+      </div>
+      <p class="safety-note">本教材は教育目的です。診断・治療の判断には使用できません。利用するAIサービスの最新の規約と所属機関の方針を確認してください。</p>
+    </section>
+
+    <section class="section debrief" id="debrief">
+      <div class="section-heading"><p class="section-kicker">05 · DEBRIEF</p><h2>振り返りの3問</h2></div>
+      <div class="question-grid"><article><span>Q1</span><p>最も可能性を感じた課題は？ その理由は？</p></article><article><span>Q2</span><p>最も危険だと感じた出力や過程は？</p></article><article><span>Q3</span><p>自分の授業で小さく試すなら何を変える？</p></article></div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>AI Escape Workshop Kit</strong><p>医療教育における生成AI活用のためのオープン教材</p><p>原案：三原 弘・古堅 裕章・菊原 美緒</p></div>
+    <div><p>教材: CC BY 4.0 ／ コード: MIT License</p><p>参加者が作成した画像・動画・回答データは収録していません。</p></div>
+  </footer>
+
+  <dialog id="timerDialog">
+    <button class="dialog-close" id="closeTimer" type="button" aria-label="閉じる">×</button>
+    <p class="section-kicker">MISSION TIMER</p><div class="timer-display" id="timerDisplay">15:00</div><p id="timerStatus">準備ができたら開始してください</p>
+    <div class="timer-actions"><button id="startPauseTimer" class="primary-button" type="button">開始</button><button id="restartTimer" class="secondary-button" type="button">リセット</button></div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>
+
