@@ -109,6 +109,6 @@ document.querySelectorAll(".video-play-button").forEach(button => {
 });
 
 if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
-  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js?v=20261111-5").catch(() => {}));
 }
 
