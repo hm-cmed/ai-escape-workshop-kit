@@ -5,5 +5,6 @@
 @media(max-width:560px){.topbar{padding:10px 16px}.brand span:last-child{display:none}.hero,.section{padding-left:20px;padding-right:20px}.hero h1{font-size:3.1rem}.hero-visual{transform:scale(.72);margin:-60px}.mission-summary{grid-template-columns:50px 1fr 50px}.mission-time{display:none}.mission-detail{font-size:.94rem}.check-row{align-items:flex-start;flex-direction:column}.safety-grid{grid-template-columns:1fr}footer{flex-direction:column}.topbar .ghost-button{font-size:.75rem;padding:8px 10px}}
 @media print{.topbar,.hero-visual,.hero-actions,.progress-panel,.timer-button,.copy-button,.check-row,.toast,dialog{display:none!important}.hero{min-height:0;background:#fff;color:#000;padding:20px 0}.hero h1{font-size:42pt}.hero h1 span{color:#000}.hero-lead,.hero-meta{color:#000}.section{padding:24px 0;page-break-inside:avoid}.missions,.safety{background:#fff;color:#000}.mission-summary{color:#000}.mission-detail[hidden]{display:block}.toolbox{border:1px solid #777}.inverted>p:last-child,.safety-grid p{color:#000}.safety-grid article{border-color:#999}footer{background:#fff;color:#000;padding:20px 0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+.video-frame video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--navy)}
 
 
