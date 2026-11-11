@@ -179,17 +179,75 @@
         </article>
 
         <article class="example-card visual-example video-example">
-          <div class="example-label"><span>MISSION 04</span><strong>サンプル動画</strong></div>
-          <figure>
-            <div class="video-frame">
-              <video controls preload="metadata" playsinline poster="assets/sample-pediatric-explanation-video-frame.webp" aria-label="採血を不安がる架空の患児に看護師が絵本を使って説明する動画サンプル">
-                <source src="assets/sample-pediatric-explanation-video.mp4" type="video/mp4">
-                お使いのブラウザは動画再生に対応していません。
-              </video>
-            </div>
-            <figcaption>採血を不安がる架空の患児に、医療者が目線を合わせて優しく説明する場面</figcaption>
-          </figure>
-          <p class="frame-note">ワークショップで提示した8秒の生成動画サンプルです（音声なし）。再生・一時停止・全画面表示ができます。</p>
+          <div class="example-label"><span>MISSION 04</span><strong>再生できるサンプル動画</strong></div>
+          <p class="video-intro">講習会スライドに埋め込まれていた課題紹介動画と、4種類の動画生成AIによる出力例です。「再生」を押すと動画が始まります。</p>
+          <div class="video-gallery">
+            <figure class="video-item video-item-featured">
+              <div class="video-item-heading"><strong>課題紹介</strong><span>8秒・音声あり</span></div>
+              <div class="video-frame">
+                <video id="video-workshop-intro" class="sample-video" controls preload="metadata" playsinline poster="assets/sample-video-workshop-intro-poster.webp" aria-label="60分で4課題に挑戦するワークショップ紹介動画">
+                  <source src="assets/sample-video-workshop-intro.mp4?v=20261111" type="video/mp4">
+                  お使いのブラウザは動画再生に対応していません。
+                </video>
+                <button class="video-play-button" type="button" data-video-target="video-workshop-intro">▶ 再生</button>
+              </div>
+              <figcaption>60分で4課題に挑戦するワークショップの導入動画</figcaption>
+              <a class="video-direct-link" href="assets/sample-video-workshop-intro.mp4?v=20261111" target="_blank" rel="noopener">動画を別画面で開く</a>
+            </figure>
+
+            <figure class="video-item">
+              <div class="video-item-heading"><strong>Sora</strong><span>10秒・正方形</span></div>
+              <div class="video-frame">
+                <video id="video-sora" class="sample-video" controls preload="metadata" playsinline poster="assets/sample-video-sora-poster.webp" aria-label="Soraで生成した看護師と患児の動画">
+                  <source src="assets/sample-video-sora.mp4?v=20261111" type="video/mp4">
+                  お使いのブラウザは動画再生に対応していません。
+                </video>
+                <button class="video-play-button" type="button" data-video-target="video-sora">▶ 再生</button>
+              </div>
+              <figcaption>看護師が患児に絵カードを用いて説明する場面</figcaption>
+              <a class="video-direct-link" href="assets/sample-video-sora.mp4?v=20261111" target="_blank" rel="noopener">動画を別画面で開く</a>
+            </figure>
+
+            <figure class="video-item">
+              <div class="video-item-heading"><strong>KlingAI</strong><span>10秒・音声あり</span></div>
+              <div class="video-frame">
+                <video id="video-klingai" class="sample-video" controls preload="metadata" playsinline poster="assets/sample-video-klingai-poster.webp" aria-label="KlingAIで生成した看護師と患児の動画">
+                  <source src="assets/sample-video-klingai.mp4?v=20261111" type="video/mp4">
+                  お使いのブラウザは動画再生に対応していません。
+                </video>
+                <button class="video-play-button" type="button" data-video-target="video-klingai">▶ 再生</button>
+              </div>
+              <figcaption>看護師が患児の目線に合わせて寄り添う場面</figcaption>
+              <a class="video-direct-link" href="assets/sample-video-klingai.mp4?v=20261111" target="_blank" rel="noopener">動画を別画面で開く</a>
+            </figure>
+
+            <figure class="video-item">
+              <div class="video-item-heading"><strong>Luma</strong><span>5秒・縦長</span></div>
+              <div class="video-frame">
+                <video id="video-luma" class="sample-video" controls preload="metadata" playsinline poster="assets/sample-video-luma-poster.webp" aria-label="Lumaで生成した医療者と患児の動画">
+                  <source src="assets/sample-video-luma.mp4?v=20261111" type="video/mp4">
+                  お使いのブラウザは動画再生に対応していません。
+                </video>
+                <button class="video-play-button" type="button" data-video-target="video-luma">▶ 再生</button>
+              </div>
+              <figcaption>説明を受けた患児が笑顔で親指を立てる場面</figcaption>
+              <a class="video-direct-link" href="assets/sample-video-luma.mp4?v=20261111" target="_blank" rel="noopener">動画を別画面で開く</a>
+            </figure>
+
+            <figure class="video-item">
+              <div class="video-item-heading"><strong>Google Flow</strong><span>8秒・横長</span></div>
+              <div class="video-frame">
+                <video id="video-google-flow" class="sample-video" controls preload="metadata" playsinline poster="assets/sample-video-google-flow-poster.webp" aria-label="Google Flowで生成した看護師と患児の動画">
+                  <source src="assets/sample-video-google-flow.mp4?v=20261111" type="video/mp4">
+                  お使いのブラウザは動画再生に対応していません。
+                </video>
+                <button class="video-play-button" type="button" data-video-target="video-google-flow">▶ 再生</button>
+              </div>
+              <figcaption>絵本を使って採血の流れを説明する場面</figcaption>
+              <a class="video-direct-link" href="assets/sample-video-google-flow.mp4?v=20261111" target="_blank" rel="noopener">動画を別画面で開く</a>
+            </figure>
+          </div>
+          <p class="frame-note">ツール名は2025年講習会スライドの表記に基づきます。すべて架空・合成素材です。</p>
         </article>
       </div>
       <aside class="example-policy" aria-label="サンプル利用時の注意">

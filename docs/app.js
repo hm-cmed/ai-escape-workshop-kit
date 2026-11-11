@@ -93,6 +93,21 @@ document.querySelector("#restartTimer").addEventListener("click", () => { stopTi
 document.querySelector("#closeTimer").addEventListener("click", () => { stopTimer(); dialog.close(); });
 dialog.addEventListener("close", stopTimer);
 
+const sampleVideos = [...document.querySelectorAll(".sample-video")];
+document.querySelectorAll(".video-play-button").forEach(button => {
+  const video = document.querySelector(`#${button.dataset.videoTarget}`);
+  if (!video) return;
+  const frame = button.closest(".video-frame");
+  button.addEventListener("click", async () => {
+    sampleVideos.forEach(other => { if (other !== video) other.pause(); });
+    try { await video.play(); }
+    catch { window.open(video.querySelector("source").src, "_blank", "noopener"); }
+  });
+  video.addEventListener("playing", () => frame.classList.add("is-playing"));
+  video.addEventListener("pause", () => frame.classList.remove("is-playing"));
+  video.addEventListener("ended", () => frame.classList.remove("is-playing"));
+});
+
 if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
   window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
 }
