@@ -1,4 +1,4 @@
-const CACHE = "ai-escape-workshop-v2";
+const CACHE = "ai-escape-workshop-v3";
 const ASSETS = ["./", "index.html", "styles.css", "app.js", "manifest.webmanifest", "assets/sample-heatstroke-poster.webp", "assets/sample-pediatric-explanation-video-frame.webp", "assets/sample-pediatric-explanation-video.mp4"];
 self.addEventListener("install", event => event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS))));
 self.addEventListener("activate", event => event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key))))));
